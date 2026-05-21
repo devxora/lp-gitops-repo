@@ -15,3 +15,8 @@ spec:
       containers:
         - name: {{ .Values.appName }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+    env:
+    {{- range $key , $ value : = .Values.env }}
+    - name: {{ $key }}
+      value: {{ $value | quote }}
+    {{- end }}        
