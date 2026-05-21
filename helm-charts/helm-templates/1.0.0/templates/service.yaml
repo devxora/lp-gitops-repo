@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.appName}}
+spec:
+  selector:
+    app: {{ .Values.appName }}
+  type: {{ .Values.service.type }}
+  ports:
+    {{- with .Values.service }}
+    - targetPort: {{ .targetPort }}
+      port: {{ .port }}
+      {{- if eq .type "NodePort" }}
+      nodePort: {{ .nodePort }}
+      {{- end }}
+    {{- end }}    
+  env:
+    {{- range $key , $ value : = .Values.env }}
+    - name: {{ $key }}
+      value: {{ $value | quote }}
+    {{- end }}  

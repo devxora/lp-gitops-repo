@@ -1,0 +1,21 @@
+appName: legal-platform-fe
+replicaCount: 3
+image:
+  repository: xyz/image
+  tag: latest
+
+service:
+  type: NodePort
+  targetPort: 3000
+  port: 80
+  nodePort: 31002
+
+env:
+  POSTGRES_USER: postgres 
+  POSTGRES_PASSWORD: le9219gal
+  POSTGRES_DB: legal_platform
+  POSTGRES_HOST: postgres
+  POSTGRES_PORT: 5432
+  POSTGRES_SCHEMA: legal_platform
+  DATABASE_POOL_SIZE: 10
+  DATABASE_MAX_OVERFLOW: 20  

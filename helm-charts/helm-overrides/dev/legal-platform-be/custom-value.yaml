@@ -1,0 +1,10 @@
+appName: legal-platform-be
+replicaCount: 3
+image:
+  repository: xyz/image
+  tag: latest
+
+service:
+  type: ClusterIP
+  targetPort: 80
+  port: 80
