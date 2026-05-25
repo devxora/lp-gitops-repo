@@ -1,5 +1,5 @@
 appName: legal-platform-be
-replicaCount: 3
+replicaCount: 5
 image:
   repository: nginx
   tag: latest
