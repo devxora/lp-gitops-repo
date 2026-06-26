@@ -1,5 +1,0 @@
-auth:
-  postgresPassword: postgres
-  username: postgres
-  password: 
-  database: ""
